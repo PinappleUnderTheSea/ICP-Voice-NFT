@@ -1,3 +1,43 @@
+type RegisterArgs = record {
+    name: text;
+    data: vec float64;
+};
+
+type VoiceNFT = record {
+    id: nat64;
+    owner: principal;
+    voice_fingerprint: vec float64;
+    name: text;
+};
+
+type NFTResult = variant {
+    Ok: VoiceNFT;
+    Err: text;
+};
+
+type NFTsResult = variant {
+    Ok: vec VoiceNFT;
+    Err: text;
+};
+
+type MatchArgs = record {
+    speaker_map: vec record {
+        speaker: text;
+        fingerprint: vec float64;
+    };
+};
+
+type MatchResult = vec record {
+    speaker: text;
+    result: text;
+};
+
+
 service : {
     "greet": (text) -> (text) query;
+    "register_voice_nft": (RegisterArgs) -> (NFTResult);
+    "list_nfts": () -> (NFTsResult);
+    "count_all": () -> (nat64);
+    "match_speakers": (MatchArgs) -> (MatchResult);
+
 }

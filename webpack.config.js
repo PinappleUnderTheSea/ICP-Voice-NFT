@@ -50,6 +50,23 @@ module.exports = {
   //    { test: /\.css$/, use: ['style-loader','css-loader'] }
   //  ]
   // },
+
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,   // 添加对 .js 和 .jsx 文件的支持
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
+        test: /\.css$/,  // 支持 CSS 文件的加载
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+  
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, frontend_entry),

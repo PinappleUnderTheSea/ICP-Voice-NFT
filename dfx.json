@@ -7,7 +7,7 @@
     },
     "icp_hello_world_rust_frontend": {
       "dependencies": [
-        "icp_hello_world_rust_backend"
+        "icp_hello_world_rust_backend"      
       ],
       "frontend": {
         "entrypoint": "src/icp_hello_world_rust_frontend/src/index.html"
@@ -17,7 +17,33 @@
         "dist/icp_hello_world_rust_frontend/"
       ],
       "type": "assets"
+    },
+    "internet_identity": {
+      "type": "custom",
+      "candid": "internet_identity/internet_identity.did",
+      "wasm": "internet_identity/internet_identity_dev.wasm.gz",
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "frontend": {}    
+    },
+    "icp_ledger_canister": {
+      "type": "custom",
+      "candid": "ledger/ledger.did",
+      "wasm": "ledger/ledger-canister.wasm.gz",
+      "remote": {
+        "id": {
+          "ic": "ryjl3-tyaaa-aaaaa-aaaba-cai"
+        }
+      }
     }
+  }, 
+  "csp": {
+    "connect-src": "'self' http://localhost:* http://127.0.0.1:* https://icp0.io https://*.icp0.io https://icp-api.io",
+    "media-src": "'self' blob:",
+    "style-src": "'self' 'unsafe-inline'"
   },
   "defaults": {
     "build": {

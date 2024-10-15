@@ -1,0 +1,165 @@
+/* 设置页面背景为渐变色，匹配Logo的颜色 */
+body {
+  font-family: 'Roboto', sans-serif;  /* 使用现代、简洁的字体 */
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #FF6600 100%);  /* 与Logo匹配的渐变背景 */
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Logo样式 */
+.App-logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+/* h1 标题样式，进一步加大加粗 */
+h1 {
+  font-size: 56px; /* 字号进一步加大 */
+  color: #ffffff; /* 白色字体 */
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 900; /* 加粗字体 */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* 保持阴影效果，增加立体感 */
+}
+
+/* 表单容器样式 */
+form {
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.1);  /* 半透明背景 */
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* 增加立体感 */
+  margin-bottom: 30px; /* 增加下方间距 */
+  width: 100%;  /* 让表单宽度占满，配合文本框右对齐 */
+  max-width: 400px;  /* 设定表单最大宽度 */
+}
+
+.file-upload-container {
+  display: flex;
+  align-items: center;  /* 垂直居中对齐 */
+  justify-content: space-between;  /* 确保文件框和按钮之间均匀分布 */
+  width: 100%;  /* 容器占满父元素的宽度 */
+  margin-bottom: 25px;  /* 与其他输入框保持一致的间距 */
+}
+
+input[type="file"] {
+  flex: 1;  /* 文件选择框占据剩余空间 */
+  padding: 12px;
+  margin-right: 10px;  /* 为按钮留出一些间距 */
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-sizing: border-box;  /* 确保边框和内边距不影响宽度 */
+}
+
+/* 输入框样式，确保右端对齐 */
+input[type="text"], input[type="number"] {
+  font-size: 20px;  /* 字体放大 */
+  padding: 12px;
+  margin-bottom: 25px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 100%;  /* 确保输入框占满表单宽度 */
+  box-sizing: border-box;  /* 确保内边距和边框不影响宽度 */
+}
+
+/* "Analyze" 按钮的特定样式，使用 inline-flex 布局 */
+.analyze-button {
+  font-size: 18px;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #6a00f4, #ff6600);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  height: 100%;  /* 确保高度与文件选择框一致 */
+  display: inline-flex;  /* 确保按钮和文件选择框并排显示 */
+  box-sizing: border-box;
+}
+
+.analyze-button:hover {
+  transform: scale(1.05);  /* 悬停时轻微放大 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* 悬停时增加阴影 */
+}
+
+.analyze-button:active {
+  transform: scale(0.95);  /* 点击时轻微缩小 */
+  background: linear-gradient(90deg, #ff6600, #6a00f4);  /* 点击时颜色翻转 */
+}
+
+/* 设置按钮容器的布局 */
+.button-container {
+  display: flex;
+  justify-content: space-between;  /* 确保按钮有一定的间距 */
+  gap: 20px;  /* 为两个按钮之间增加20px的间距 */
+  margin-top: 20px;
+}
+
+button {
+  font-size: 22px;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #6a00f4, #ff6600);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 单独为需要居中的按钮设置 display: block */
+.center-button {
+  display: block;
+  margin: 20px auto;  /* 自动居中 */
+}
+
+button:hover {
+  transform: scale(1.05);  /* 悬停时轻微放大 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* 悬停时增加阴影 */
+}
+
+button:active {
+  transform: scale(0.95);  /* 点击时轻微缩小 */
+  background: linear-gradient(90deg, #ff6600, #6a00f4);  /* 点击时颜色翻转 */
+}
+
+/* 调整段落和输入框的标签样式 */
+label {
+  font-size: 22px; /* 放大字体 */
+  color: white;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* 音频列表设计 */
+.audio-list ul {
+  padding-left: 0;
+  margin-bottom: 20px;
+  list-style: none;  /* 移除列表的默认样式 */
+}
+
+/* 每个音频列表项的样式 */
+.audio-list li {
+  background: rgba(255, 255, 255, 0.1);  /* 半透明背景，与表单一致 */
+  border-left: 4px solid #6a00f4;  /* 左侧边框，与页面配色一致 */
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* 添加阴影，增强立体感 */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;  /* 添加交互效果 */
+}
+
+/* 列表项悬停效果 */
+.audio-list li:hover {
+  transform: scale(1.02);  /* 悬停时轻微放大 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* 悬停时增加阴影 */
+}
+
